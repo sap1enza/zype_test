@@ -1,0 +1,20 @@
+AllCops:
+  Exclude:
+    - 'db/**/*'
+    - 'script/**/*'
+    - 'bin/**/*'
+
+Metrics/LineLength:
+  Max: 130
+
+Metrics/BlockLength:
+  Exclude:
+    - config/**/*
+    - spec/**/*
+
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - spec/**/*
+
+Style/Documentation:
+  Enabled: false
