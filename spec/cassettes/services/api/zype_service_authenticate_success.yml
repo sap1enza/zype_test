@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://login.zype.com/oauth/token?client_id=61255480307354ebd4d094482f2483adec9942637979aa5c3963ecbac469f943&client_secret=926e632b2aa9758f60dbdf2f8de13bebd9a04dfd602de4c257b3f8b4a97cf0b8&grant_type=password&password=password&username=test@test.com
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.19.1
+      Date:
+      - Thu, 25 Mar 2021 01:16:41 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Origin
+      Cache-Control:
+      - no-store
+      Pragma:
+      - no-cache
+      Etag:
+      - W/"4efdfb9139b29f16883774d0d610884e"
+      X-Request-Id:
+      - 74d4906894b018b528d56539a9602a44
+      X-Runtime:
+      - '0.121217'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: '{"access_token":"ade94071743c939899bdebd7c7219baa89af44f0a3cb704e030aa6641cdabd1a","token_type":"Bearer","expires_in":604800,"refresh_token":"e198be6a83a2e64c524f60321c38140df5ce654b239afde8669ba17c1860aa65","scope":"consumer","created_at":1616635001}'
+  recorded_at: Thu, 25 Mar 2021 01:16:41 GMT
+recorded_with: VCR 6.0.0

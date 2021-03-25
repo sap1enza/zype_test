@@ -1,0 +1,11 @@
+<p>Current Page: <%= @pagination['current'] %> </p>
+
+<p>
+  <% if previous_page? %>
+    <%= link_to "[Previous Page]", "?page=#{@pagination['previous']}" %>
+  <% end %>
+
+  <% if next_page? %>
+    <%= link_to "[Next Page]", "?page=#{@pagination['next']}" %>
+  <% end %>
+</p>

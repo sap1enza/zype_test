@@ -1,0 +1,26 @@
+<% unless authenticated? %>
+  <%= button_to "Login", login_path, method: :get %>
+<% else %>
+  <p>You're authenticated</p>
+
+  <%= button_to "Logout", login_path, method: :delete %>
+<% end %>
+
+<hr>
+
+<%= render partial: 'pagination_navbar' %>
+
+<ul>
+  <% @presenters.each do |video| %>
+    <li>
+      <p><a href="<%= video_path(video.id) %>"><%= video.title %></a></p>
+      <p><small><%= Time.parse(video.created_at) %></small> <% if video.subscription_required %> <b>[SUBSCRIPTION REQUIRED]</b> <% end %></p>
+      <p><a href="<%= video_path(video.id) %>"><img src="<%= video['thumbnails'].first['url'] %>" alt="Minha Figura"></a></p>
+
+    </li>
+  <% end %>
+</ul>
+
+<hr>
+
+<%= render partial: 'pagination_navbar' %>

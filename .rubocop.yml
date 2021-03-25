@@ -1,4 +1,5 @@
 AllCops:
+  NewCops: enable
   Exclude:
     - 'db/**/*'
     - 'script/**/*'
@@ -17,4 +18,14 @@ Lint/AmbiguousBlockAssociation:
     - spec/**/*
 
 Style/Documentation:
+  Enabled: false
+
+Metrics/MethodLength:
+  CountAsOne: [array, hash]
+
+Lint/ConstantDefinitionInBlock:
+  Exclude:
+    - spec/rails_helper.rb
+
+Lint/MissingSuper:
   Enabled: false

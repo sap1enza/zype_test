@@ -1,0 +1,5 @@
+base_url: https://api.zype.com
+auth_url: https://login.zype.com/oauth/token
+player_url: https://player.zype.com
+app_key: <%= ENV.fetch('ZYPE_APP_KEY', '') %>
+player_key: <%= ENV.fetch('ZYPE_PLAYER_KEY', '') %>

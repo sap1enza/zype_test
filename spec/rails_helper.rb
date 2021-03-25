@@ -3,7 +3,6 @@
 ENV['RAILS_ENV'] ||= 'test'
 
 require 'spec_helper'
-require 'mock_redis'
 require 'vcr'
 
 require File.expand_path('../config/environment', __dir__)
@@ -72,8 +71,6 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
-  REDIS = MockRedis.new
-
   config.before(:suite) do
     DatabaseCleaner.clean_with :truncation
     DatabaseCleaner.strategy = :transaction
@@ -86,6 +83,5 @@ RSpec.configure do |config|
 
   config.after(:each) do
     DatabaseCleaner.clean
-    REDIS.flushall
   end
 end
