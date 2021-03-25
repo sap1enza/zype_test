@@ -1,4 +1,4 @@
-<%= render partial: 'pagination_navbar' %>
+<%= render partial: 'pagination_navbar' if @pagination %>
 
 <ul>
   <% @presenters.each do |video| %>
@@ -12,4 +12,4 @@
 
 <hr>
 
-<%= render partial: 'pagination_navbar' %>
+<%= render partial: 'pagination_navbar' if @pagination %>

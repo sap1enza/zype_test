@@ -2,13 +2,11 @@
 
 class HomeController < ApplicationController
   def index
-    Rails.cache.fetch("videos_page_#{current_page}") do
-      response = zype_api.videos(page: current_page)
+    response = zype_api.videos(page: current_page)
 
-      @pagination = response['pagination']
-      @videos     = response['response']
-      @presenters = @videos.map { |video| VideoPresenter.new(video) }
-    end
+    @pagination = response['pagination']
+    @videos     = response['response']
+    @presenters = @videos.map { |video| VideoPresenter.new(video) }
   end
 
   private

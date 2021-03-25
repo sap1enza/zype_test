@@ -2,10 +2,10 @@
 
 module PaginationHelper
   def previous_page?
-    @pagination['previous'].present?
+    @pagination.dig('previous').present?
   end
 
   def next_page?
-    @pagination['current'] < @pagination['pages']
+    @pagination.dig('current') < @pagination.dig('pages')
   end
 end
